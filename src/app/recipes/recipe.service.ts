@@ -8,26 +8,33 @@ import {Subject} from 'rxjs';
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      'test name',
-      'test description',
-      'https://www.maxpixel.net/static/photo/1x/Cooking-Meat-Recipe-Dinner-Restaurant-Grill-Beef-2508859.jpg',
-    [
-      new Ingredient('Meat', 2),
-      new Ingredient('Tomato', 3),
-    ]),
-    new Recipe(
-      'another test name',
-      'test description',
-      'https://www.maxpixel.net/static/photo/1x/Cooking-Meat-Recipe-Dinner-Restaurant-Grill-Beef-2508859.jpg',
-      [
-        new Ingredient('Cucumber', 8),
-        new Ingredient('Potato', 9),
-      ]),
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'test name',
+  //     'test description',
+  //     'https://www.maxpixel.net/static/photo/1x/Cooking-Meat-Recipe-Dinner-Restaurant-Grill-Beef-2508859.jpg',
+  //   [
+  //     new Ingredient('Meat', 2),
+  //     new Ingredient('Tomato', 3),
+  //   ]),
+  //   new Recipe(
+  //     'another test name',
+  //     'test description',
+  //     'https://www.maxpixel.net/static/photo/1x/Cooking-Meat-Recipe-Dinner-Restaurant-Grill-Beef-2508859.jpg',
+  //     [
+  //       new Ingredient('Cucumber', 8),
+  //       new Ingredient('Potato', 9),
+  //     ]),
+  // ];
+
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
