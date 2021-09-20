@@ -50,4 +50,8 @@ export class AuthComponent implements OnInit {
 
     f.reset();
   }
+
+  onCloseModal() {
+    this.error = null;
+  }
 }
