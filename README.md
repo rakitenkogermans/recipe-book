@@ -6,7 +6,7 @@ E-mail: test@gmail.com
 
 Password: 123456
 
-<a href="https://recipe-book-ng.netlify.app/" style="color:#43cea2; font-size: 32px; font-weight: 900;">Link on Netlify 🔗
+<a href="https://recipe-book-ng.netlify.app/" target="_blank" style="color:#43cea2; font-size: 32px; font-weight: 900;">Link on Netlify 🔗
 </a>
 
 <hr>
